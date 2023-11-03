@@ -1,65 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import LocalStorage from "./localStorage";
+import IconTypes from "./IconTypes";
 
-const PokemonDetail = ({ pokemon }) => {
-  const [pokemons, setPokemons] = useState([]);
-
-  useEffect(() => {
-    const storedPokemons = JSON.parse(localStorage.getItem("pokemons")) || [];
-    setPokemons(storedPokemons);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("pokemons", JSON.stringify(pokemons));
-  }, [pokemons]);
-
-  const addPokemons = (id) => {
-    if (id !== null) {
-      const storedPokemons = JSON.parse(localStorage.getItem("pokemons")) || [];
-      if (!storedPokemons.includes(id)) {
-        const updatedPokemons = [...storedPokemons, id];
-        localStorage.setItem("pokemons", JSON.stringify(updatedPokemons));
-        setPokemons(updatedPokemons);
-        console.log(id);
-        console.log(updatedPokemons);
-        console.log(localStorage);
-      } else {
-        console.log("déjà dans le pokedex");
-      }
-    }
-  };
-
-  const clear = () => {
-    localStorage.removeItem("pokemons");
-    setPokemons([]); // Mettez à jour l'état local également si nécessaire
-  };
-
+const PokemonDetail = ({ pokemon, pokemonTypes }) => {
   return (
-    <div>
+    <div className={`detail ${pokemon.types[0].type.name}`}>
       <h2>{pokemon.name}</h2>
       <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+      <p>{pokemon.id}</p>
       <p>Weight: {pokemon.weight} kg</p>
-      {/* display types */}
       <p>
         Types:{" "}
-        {pokemon.types.map((type, index) => (
-          <span key={index}>{type.type.name}</span>
-        ))}
+        <div className="type">
+          {pokemon.types.map((type, index) => (
+            <IconTypes
+              key={index}
+              type={type.type.name}
+              pokemonTypes={pokemonTypes}
+            />
+          ))}
+        </div>
       </p>
       {/* display abilities */}
-      <p>
-        Abilities:{" "}
-        {pokemon.abilities.map((ability, index) => (
-          <span key={index}>{ability.ability.name}</span>
-        ))}
-      </p>
-      {/* / Add to pokedex */}
+
       <div className="add">
-        <button onClick={() => addPokemons(pokemon.id)} className="buttonAdd">
-          +
-        </button>
-        <button onClick={() => clear()} className="buttonAdd">
-          -
-        </button>
+        <LocalStorage id={pokemon.id} />
       </div>
     </div>
   );

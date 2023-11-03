@@ -36,3 +36,281 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  /* color: white;
+  background-color: black; */
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #90c547, #bb8fce);
+
+}
+
+/* NAV-BAR **************************************************************/
+.navBar {
+  /* border: 1px solid rgb(0, 0, 0); */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #638d28;
+  box-shadow: 4px 10px 23px -3px rgba(0, 0, 0, 0.501);
+  border-radius: 0 0 20px 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid red; */
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.list-nav{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center ;
+  /* border: 1px solid rgb(0, 255, 30); */
+  width: 15em;
+  font-size: 24px;
+  font-weight: 700;
+  height: 4em;
+}
+
+.img img {
+  width: 7em;
+  height: auto;
+}
+
+.list-nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.list-nav a {
+  text-decoration: none; 
+  color: rgb(0, 0, 0); 
+}
+
+
+.list-nav a:active {
+  color: rgb(255, 0, 0); 
+} 
+
+
+ul {
+  list-style-type: none;
+}
+
+
+/* Search and Detail pokemon ***************************************/
+
+.listPokemon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.search {
+  background-color: rgba(255, 0, 0, 0.604);
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  height: 29em;
+  padding: 15px 0;
+  border-radius: 20px;
+}
+
+
+.search .txt input{
+  border-radius: 15px;
+  height: 2em;
+  width: 20em;
+}
+
+.pokemonDetail {
+  /* background-color: blue; */
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.DisplayPokemon{
+  font-size: 20px;
+  font-weight: 650;
+  margin: 1em 0 0 0;
+}
+
+.DisplayPokemon img {
+  width: 7em;
+  height: auto;
+}
+
+.pni {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.pni p {
+  margin: 0 10px;
+}
+
+.detail {
+  padding: 10px 9px;
+  margin: 0;
+  border-radius: 15px;
+  width: 13.5em;
+  margin-bottom: 10px;
+  box-shadow: -7px 3px 23px -6px rgba(0,0,0,0.58);
+  transition: all 0.5s ease-in-out;
+}
+
+.detail:hover {
+  transform: scale(1.05);
+}
+
+.type {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.type img {
+  width: 2em;
+}
+
+.typeIcon img {
+  width: 2em;
+}
+
+
+/* Button **********************************************************/
+
+#button button {
+  width: 2em;
+  height: 2em;
+  background-color: #77829a;
+  border: 1px solid;
+  transition: all 0.3s ease-in-out;
+}
+
+#button button:hover{
+  background-color: #77829acf;
+  transform: scale(1.1);
+}
+
+/* Pokedex *********************************************************/
+
+.pokedex {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  /* border: 1px solid; */
+  padding: 0 5em;
+  margin-bottom: 3em;
+}
+
+
+/* Pagination ******************************************/
+.pagination {
+  height: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid; */
+}
+
+
+#clear {
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myPokedex {
+  margin-bottom: 41vh;
+}
+
+
+/*  */
+.detail.water {
+  background-color: rgba(0, 0, 255, 0.43);
+}
+
+.detail.fire {
+  background-color: rgba(255, 136, 0, 0.43);
+}
+
+.detail.grass {
+  background-color: rgba(0, 255, 0, 0.43);
+}
+
+.detail.electric {
+  background-color: rgba(255, 255, 0, 0.43);
+}
+
+.detail.psychic {
+  background-color: rgba(255, 0, 255, 0.43);
+}
+
+.detail.ice {
+  background-color: rgba(0, 255, 255, 0.43);
+}
+
+.detail.dragon {
+  background-color: rgba(255, 0, 0, 0.43);
+}
+
+.detail.fairy {
+  background-color: rgba(255, 0, 255, 0.43);
+}
+
+.detail.ghost {
+  background-color: rgba(0, 0, 0, 0.43);
+}
+
+.detail.fighting {
+  background-color: rgba(255, 0, 0, 0.43);
+}
+
+.detail.steel {
+  background-color: rgba(0, 0, 0, 0.43);
+}
+
+.detail.normal {
+  background-color: rgba(0, 0, 0, 0.43);
+}
+
+.detail.flying {
+  background-color: rgba(0, 0, 0, 0.43);
+}
+
+.detail.ground {
+  background-color: rgba(156, 105, 9, 0.43);
+}
+
+.detail.bug {
+  background-color: rgba(36, 209, 30, 0.43);
+}
+
+.detail.rock {
+  background-color: rgba(0, 0, 0, 0.43);
+}
+
+.detail.poison {
+  background-color: rgba(115, 5, 174, 0.43);
+}
+
+.detail.shadow {
+  background-color: rgba(0, 0, 0, 0.43);
+}
+
+
